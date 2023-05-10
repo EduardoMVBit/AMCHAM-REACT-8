@@ -1,0 +1,32 @@
+/*
+
+selector {
+  propiedad: valor;
+}
+
+@
+
+funcion(parametros)
+
+1px
+100% o 25%
+240px 50%
+1em relative font-size padre
+1rem relative = 16px
+100vw viewport width ancho de la area visible
+100vh viewport height altura de la area visible
+
+
+*/
+:root{
+  --color: teal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+body{
+  background-color: var(--color);
+}

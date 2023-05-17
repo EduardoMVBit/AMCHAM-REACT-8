@@ -6,7 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="main.css" />
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
   </head>
-  <body></body>
+  <body>
+    <!--
+    <nav>
+      <a href="#" id="bars" class="fa-solid fa-bars"></a>
+    </nav>
+    <nav id="main-nav" class="hide">
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+    </nav>
+    -->
+    <form action="#" id="agregar">
+      <fieldset>
+        <label for="task"></label>
+        <input type="text" name="task" id="task" />
+      </fieldset>
+      <fieldset>
+        <select name="area" id="area">
+          <option value="administración">administración</option>
+          <option value="tecnico">tecnico</option>
+          <option value="programadores">programadores</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <button type="submit">agregar</button>
+      </fieldset>
+    </form>
+    <ul id="list"></ul>
+  </body>
 </html>

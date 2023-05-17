@@ -1,0 +1,35 @@
+a{
+  text-decoration: none;
+  color: black;
+}
+#main-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: .25rem;
+  color: black;
+  width: 50vw;
+  height: 100vh;
+  transition: all .3s ease-in-out;
+}
+#bars{
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: teal;
+  color: snow;
+  margin-bottom: 1rem;
+}
+
+#main-nav.hide{
+  left: -50vw;
+}

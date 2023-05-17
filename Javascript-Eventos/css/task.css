@@ -1,0 +1,46 @@
+form:first-child{
+  width: 50vw;
+  height: 3rem;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: teal;
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+}
+form:first-child fieldset:first-child{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+form:first-child fieldset:first-child input{
+  flex: 1;
+  padding: .25rem 0 ;
+  outline: none;
+}
+.task{
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  width: calc(100% - 1rem);
+  flex-wrap: wrap;
+  background-color: turquoise;
+  border-radius: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.task.completed{
+  background-color: greenyellow;
+}
+#list{
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  max-height: 50vh;
+  overflow-y: scroll;
+  gap: 1rem;
+  padding: 1rem;
+
+}

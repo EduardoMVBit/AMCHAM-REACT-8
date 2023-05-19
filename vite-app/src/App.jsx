@@ -1,10 +1,4 @@
-import Contador from "./Contador";
-
 const App = () => {
-  return (
-    <>
-      <Contador />
-    </>
-  );
+  return <></>;
 };
 export default App;

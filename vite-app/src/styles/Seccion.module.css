@@ -1,0 +1,18 @@
+.container{
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.container h2{
+  background-color: teal;
+  color: snow;
+  font-size: 1rem;
+  display: inline-block;
+  flex: 1;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem .25rem;
+}

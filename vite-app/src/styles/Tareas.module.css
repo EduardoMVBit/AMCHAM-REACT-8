@@ -1,0 +1,37 @@
+.add{
+  display: flex;
+  height: 3rem;
+  gap: 1rem;
+  background-color: turquoise;
+  border-radius: .25rem;
+  align-items: center;
+  margin: .25rem 0;
+  box-shadow: 0 0 .25rem 0 teal;
+}
+.add input{
+  flex: 1;
+  padding: 1rem .25rem;
+  font-family: sans-serif;
+}
+.add input::placeholder{
+  opacity: 1;
+  color: teal;
+}
+
+
+.list{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  height: 25vh;
+  max-height: 25vh;
+  overflow-y: scroll;
+}
+
+.list li{
+  background-color: tomato;
+}
+.list li.complete{
+  background-color: aquamarine;
+}

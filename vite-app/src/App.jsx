@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Life from "./Life";
 import Api from "./Api";
+import ListaTareas from "./ListaTareas";
 
 const App = () => {
   //const [show, update] = useState(true);
   return (
     <>
-      <Api />
+      <ListaTareas />
     </>
   );
 };

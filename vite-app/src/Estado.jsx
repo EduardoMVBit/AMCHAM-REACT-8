@@ -1,33 +1,24 @@
 import React, { useState } from "react";
 
-const Contador = () => {
-  const [contador, setContador] = useState(0);
-  const incrementar = () => setContador(contador + 1);
-  const decrementar = () => setContador(contador - 1);
+const Estado = () => {
+  const [mostrar, cambiar] = useState(false);
+  const saludar = () => cambiar(!mostrar);
   return (
-    <form action="#">
-      <button
-        type="button"
-        onClick={(evento) => {
-          incrementar();
-        }}
-      >
-        +
-      </button>
-      <span>{contador}</span>
-      <button
-        type="button"
+    <>
+      {mostrar ? <p>Mensaje</p> : null}
+      <a
         onClick={(ev) => {
-          decrementar();
+          ev.preventDefault();
+          saludar();
         }}
       >
-        -
-      </button>
-    </form>
+        MOSTRAR
+      </a>
+    </>
   );
 };
 
-export default Contador;
+export default Estado;
 
 // Hooks atajos de utilidades 16.8
 /*

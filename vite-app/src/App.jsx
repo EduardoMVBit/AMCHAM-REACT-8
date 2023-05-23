@@ -5,11 +5,7 @@ import ListaTareas from "./ListaTareas";
 
 const App = () => {
   //const [show, update] = useState(true);
-  return (
-    <>
-      <ListaTareas />
-    </>
-  );
+  return <></>;
 };
 export default App;
 

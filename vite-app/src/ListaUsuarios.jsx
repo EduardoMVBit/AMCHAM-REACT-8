@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const ListaUsuarios = () => {
   let [usuarios, actualizar] = useState([]);
+
   useEffect(() => {
     const obtener = () => {
       fetch("https://646d4e359c677e232189e67c.mockapi.io/users")
@@ -14,6 +15,7 @@ const ListaUsuarios = () => {
       actualizar([]);
     };
   }, []);
+
   const agregar = (evento) => {
     evento.preventDefault();
     const { name, email } = evento.target.elements;
@@ -31,6 +33,7 @@ const ListaUsuarios = () => {
       })
       .catch((error) => console.error("Error", error));
   };
+
   const eleminar = (evento) => {
     evento.preventDefault();
     const { id } = evento.target.elements;
@@ -48,6 +51,7 @@ const ListaUsuarios = () => {
       })
       .catch((error) => console.error("Error", error));
   };
+
   return (
     <>
       <form action="#" onSubmit={agregar}>

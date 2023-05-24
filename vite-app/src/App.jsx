@@ -3,12 +3,13 @@ import Life from "./Life";
 import Api from "./Api";
 import ListaTareas from "./ListaTareas";
 import ListaUsuarios from "./ListaUsuarios";
+import AppTareas from "./Tareas/AppTareas";
 
 const App = () => {
   //const [show, update] = useState(true);
   return (
     <>
-      <ListaUsuarios />
+      <AppTareas />
     </>
   );
 };

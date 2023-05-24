@@ -2,10 +2,15 @@ import { useState } from "react";
 import Life from "./Life";
 import Api from "./Api";
 import ListaTareas from "./ListaTareas";
+import ListaUsuarios from "./ListaUsuarios";
 
 const App = () => {
   //const [show, update] = useState(true);
-  return <></>;
+  return (
+    <>
+      <ListaUsuarios />
+    </>
+  );
 };
 export default App;
 

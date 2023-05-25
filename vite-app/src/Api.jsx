@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
 
 const Api = () => {
   let [data, set] = useState([]);
@@ -15,19 +16,21 @@ const Api = () => {
     return () => set([]);
   }, []);
   return (
-    <ul>
-      {data.map((personaje) => (
-        <li key={personaje.id}>
-          <h2>{personaje.name}</h2>
-          <picture>
-            <img
-              src={personaje.image}
-              alt={`Image from character ${personaje.name}`}
-            />
-          </picture>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul>
+        {data.map((personaje) => (
+          <li key={personaje.id}>
+            <h2>{personaje.name}</h2>
+            <picture>
+              <img
+                src={personaje.image}
+                alt={`Image from character ${personaje.name}`}
+              />
+            </picture>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 

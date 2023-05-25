@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
 
 const ListaUsuarios = () => {
   let [usuarios, actualizar] = useState([]);

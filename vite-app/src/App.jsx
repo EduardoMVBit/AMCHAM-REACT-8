@@ -6,10 +6,21 @@ import ListaUsuarios from "./ListaUsuarios";
 import AppTareas from "./Tareas/AppTareas";
 
 const App = () => {
-  //const [show, update] = useState(true);
+  const [show, update] = useState("home");
   return (
     <>
-      <AppTareas />
+      <nav>
+        <a
+          href="home"
+          onClick={(e) => {
+            e.preventDefault();
+            update(e.target.href);
+          }}
+        >
+          Home
+        </a>
+      </nav>
+      {show && show == "/" ? <AppTareas /> : null}
     </>
   );
 };

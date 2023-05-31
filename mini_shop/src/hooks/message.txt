@@ -1,0 +1,108 @@
+import { useState, useEffect } from 'react';
+
+
+const UserService = () => {
+  const [users, setUsers] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [showError, setShowError] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [timer, setTimer] = useState(null);
+  
+  const clearTimer = () => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+  };
+  
+  const urlApi = 'https://646d4d739c677e232189e51a.mockapi.io/user';
+
+  useEffect(() => {
+    fetchData();
+  
+    return () => {
+      clearTimer();
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(urlApi);
+      const jsonData = await response.json();
+      setUsers(jsonData);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const createUser = async (user, confirmPassword) => {
+    
+    if (user.name === '' || user.email === '' || user.password === '' || confirmPassword === '') {
+      setErrorMessage('Todos los campos son obligatorios');
+      setShowError(true);
+      clearTimer();
+      //aqui nos dice que despues de tantos segundos se cierra
+      setTimer(setTimeout(() => {
+        setShowError(false);
+        setErrorMessage('');
+      }, 2000));
+      return;
+    }
+
+    
+    if (user.password !== confirmPassword) {
+      setErrorMessage('Las contraseñas no coinciden');
+      setShowError(true);
+      clearTimer();
+     
+      if (timer) {
+        clearTimeout(timer);
+      }
+
+     //aqui nos dice que despues de tantos segundos se cierra
+      const newTimer = setTimeout(() => {
+        setShowError(false);
+        setErrorMessage('');
+      }, 2000);
+
+      setTimer(newTimer);
+      return;
+    }
+
+    try {
+      const response = await fetch(urlApi, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+      const newUser = await response.json();
+      setUsers([...users, newUser]);
+      //envia un mensaje donde afirma que se enviaron los datos correctamente
+      setSuccessMessage('Te has registrado');
+      setShowSuccess(true);
+      clearTimer();
+      //aqui nos dice que despues de tantos segundos se cierra
+      setTimer(setTimeout(() => {
+        setShowSuccess(false);
+        setSuccessMessage('');  
+      }, 2000));
+
+      console.log('datos enviados:', newUser);
+    } catch (error) {
+      console.error('Error creating user:', error);
+    }
+  };
+
+  return {
+    setShowSuccess,
+    successMessage,showSuccess,
+    setShowError,
+    errorMessage,showError,
+    createUser,
+  };
+};
+
+export default UserService;

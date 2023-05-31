@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: snow;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style-type: none;
+}
+html{
+  scroll-behavior: smooth;
+}
